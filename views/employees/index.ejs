@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <div class="container">
+        <h3><a href="/employees/create">Create Employee</a></h3>
+        <h1>Employee List</h1>
+        <% if(employees.length>0) { %>
+            <table class="list-table">
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Date Of Birth</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Username</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i<employees.length;i++) { %>
+                        <tr>
+                            <td>
+                                <a href="/employees/show/<%= employees[i]._id%>">
+                                    <%= employees[i].name%>
+                                </a>
+                            </td>
+                            <td>
+                                <%= employees[i].dob%>
+                            </td>
+                            <td>
+                                <%= employees[i].email%>
+                            </td>
+                            <td>
+                                <%= employees[i].gender%>
+                            </td>
+                            <td>
+                                <%= employees[i].phone%>
+                            </td>
+                            <td>
+                                <%= employees[i].address%>
+                            </td>
+                            <td>
+                                <%= employees[i].username%>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+            <% } else { %>
+                <div>No employees found.</div>
+                <% } %>
+    </div>
+</body>
+
+</html>

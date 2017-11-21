@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Detail</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <div class="container">
+        <h3><a href="/employees">Employee List</a></h3>
+        <h1>Employee Detail</h1>
+        <table>
+            <tbody>
+
+                <tr>
+                    <td>Name</td>
+                    <td>:</td>
+                    <td>
+                        <%= employee.name %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DOB</td>
+                    <td>:</td>
+                    <td>
+                        <%= employee.dob%>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>:</td>
+                    <td>
+                        <%= employee.email %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>:</td>
+                    <td>
+                        <%= employee.gender %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Phone</td>
+                    <td>:</td>
+                    <td>
+                        <%= employee.phone %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Address</td>
+                    <td>:</td>
+                    <td>
+                        <%= employee.address %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Username</td>
+                    <td>:</td>
+                    <td>
+                        <%= employee.username %>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <h3><a href="/employees/edit/<%= employee._id%>">EDIT</a></h3>
+        <form action="/employees/delete/<%= employee._id%>" method="post">
+            <button type="submit">DELETE</button>
+        </form>
+    </div>
+</body>
+
+</html>
